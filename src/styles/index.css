@@ -1,0 +1,162 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--midnight-teal);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+  }
+
+  ::selection {
+    background: var(--champagne);
+    color: var(--midnight-teal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--champagne);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* Marker for content that still needs real information. */
+.placeholder-mark {
+  display: inline-block;
+  padding: 0 0.4em;
+  border: 1px dashed color-mix(in srgb, currentColor 55%, transparent);
+  border-radius: 3px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  font-size: 0.9em;
+  font-style: normal;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slow-drift {
+  from {
+    transform: scale(1.06) translate3d(-1.2%, 0, 0);
+  }
+  to {
+    transform: scale(1.14) translate3d(1.2%, -1%, 0);
+  }
+}
+
+@keyframes light-sweep {
+  from {
+    transform: translate3d(-6%, 0, 0) rotate(18deg);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(6%, 0, 0) rotate(18deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.anim-rise {
+  animation: rise-in 1s var(--ease-soft) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.anim-fade {
+  animation: fade-in 1.6s ease-out both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.anim-drift {
+  animation: slow-drift 32s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.anim-sweep {
+  animation: light-sweep 14s ease-in-out infinite alternate;
+}
+
+.anim-scroll-cue {
+  animation: scroll-cue 2.6s ease-in-out infinite;
+}
+
+/* Film grain: static, cheap, adds depth to flat teal areas. */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
