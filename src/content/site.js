@@ -18,6 +18,8 @@ export const navLinks = [
   { label: 'Events', to: '/#events' },
   { label: 'Gallery', to: '/#gallery' },
   { label: 'OJAS 2026', to: '/ojas-2026' },
+  { label: 'Contact', to: '/#contact' },
+  { label: 'Our Vision', to: '/#vision' },
 ]
 
 export const navCta = { label: 'Join the Club', to: '/#join' }
