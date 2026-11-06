@@ -1,27 +1,24 @@
 /*
- * Design tokens: single source of truth.
- * Brand variables live on :root; Tailwind utilities (bg-midnight-teal,
- * text-ink-2, font-heading ...) are generated from them via @theme inline.
+ * Design tokens. The palette follows the club seal: ivory ground,
+ * temple night, clay, and antique gold. Gold is for night surfaces,
+ * hairlines, and filled buttons (dark text). It is not used as small
+ * text on ivory.
  */
 
 :root {
-  /* Brand palette */
-  --midnight-teal: #102d32;
-  --deep-botanical: #315b56;
-  --eucalyptus: #8eaaa0;
-  --mist-green: #dce8e2;
-  --warm-ivory: #f3f1e9;
-  --champagne: #c6a875; /* hairlines, numerals, icon strokes only */
+  --midnight-teal: #140f0c;
+  --deep-botanical: #7c3d22;
+  --eucalyptus: #e8c99a;
+  --mist-green: #f1e4d2;
+  --warm-ivory: #faf4ea;
+  --champagne: #e2ae55;
+  --saffron: #e36b2c;
 
-  /* Text */
-  --text-dark: #203331;
-  /* Darkened from #657572 (4.28:1 on ivory, 3.84:1 on mist) to meet WCAG AA:
-     5.68:1 on ivory, 5.10:1 on mist. */
-  --text-dark-2: #52625f;
-  --text-light: #f3f1e9;
-  --text-light-2: #bfcfc8;
+  --text-dark: #1a120e;
+  --text-dark-2: #4e3d31;
+  --text-light: #faf4ea;
+  --text-light-2: #eadcc8;
 
-  /* Motion */
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -32,24 +29,24 @@
   --color-mist-green: var(--mist-green);
   --color-warm-ivory: var(--warm-ivory);
   --color-champagne: var(--champagne);
+  --color-saffron: var(--saffron);
   --color-ink: var(--text-dark);
   --color-ink-2: var(--text-dark-2);
   --color-light: var(--text-light);
   --color-light-2: var(--text-light-2);
 
-  --font-heading: 'Cormorant Garamond', 'Cormorant', Georgia, 'Times New Roman', serif;
-  --font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Fluid type scale */
   --text-display: clamp(3.5rem, 1.5rem + 8.5vw, 7.5rem);
-  --text-display--line-height: 1;
-  --text-display--letter-spacing: -0.02em;
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.03em;
   --text-h1: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
-  --text-h1--line-height: 1.08;
-  --text-h1--letter-spacing: -0.015em;
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.02em;
   --text-h2: clamp(2rem, 1.3rem + 2.6vw, 3.25rem);
-  --text-h2--line-height: 1.12;
-  --text-h2--letter-spacing: -0.01em;
+  --text-h2--line-height: 1.08;
+  --text-h2--letter-spacing: -0.015em;
   --text-h3: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
   --text-h3--line-height: 1.2;
   --text-body-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
@@ -60,7 +57,6 @@
 
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Radii: small, restrained */
   --radius-sm: 4px;
   --radius-md: 8px;
 }

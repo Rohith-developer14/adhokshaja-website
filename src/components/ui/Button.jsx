@@ -16,16 +16,15 @@ const SIZES = {
 }
 
 const VARIANTS = {
-  // Deep Botanical fill, ivory text (6.7:1). Use on light surfaces.
+  // Antique gold with night text. Holds on both ivory and temple night.
   primary:
-    'bg-deep-botanical text-light border border-deep-botanical hover:bg-midnight-teal hover:border-midnight-teal',
-  // Same fill with a fine eucalyptus edge so it holds its shape on dark photography.
+    'bg-champagne text-midnight-teal border border-champagne hover:bg-warm-ivory hover:border-warm-ivory',
   'primary-on-dark':
-    'bg-deep-botanical text-light border border-eucalyptus/50 hover:bg-[#3c6c66] hover:border-eucalyptus',
+    'bg-champagne text-midnight-teal border border-champagne hover:bg-warm-ivory hover:border-warm-ivory',
   secondary:
-    'bg-transparent text-ink border border-ink/35 hover:bg-ink hover:text-light hover:border-ink',
+    'bg-transparent text-ink border border-ink/30 hover:bg-ink hover:text-light hover:border-ink',
   'secondary-on-dark':
-    'bg-transparent text-light border border-light/40 hover:bg-light/10 hover:border-light/80',
+    'bg-transparent text-light border border-light/40 hover:border-champagne hover:text-champagne',
   ghost: 'bg-transparent text-current border border-transparent hover:underline underline-offset-8',
 }
 

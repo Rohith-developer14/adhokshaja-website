@@ -1,14 +1,14 @@
 /**
- * Recruitment content based on the Club Adhokshaja recruitment poster supplied
- * by the club. Add the confirmed Google Form / application URL here when
- * the coordinator shares it. Keep null until then; do not publish a guessed URL.
+ * Recruitment content based on the club poster. The form URL is the one
+ * published on the official Instagram bio (@yogapesuofficial).
  */
 export const recruitment = {
   eyebrow: 'Become part of Adhokshaja',
   title: 'Find your people.\nDiscover your potential.',
   intro:
     'Become part of a community that believes in wellness, personal growth, mindfulness and making a positive difference.',
-  registrationUrl: null,
+  registrationUrl:
+    'https://docs.google.com/forms/d/e/1FAIpQLScAlxPsbEqwLA9ppIIWJt7UIkqQetWXAEVc5TJlugr_NrayXQ/viewform',
   benefits: [
     {
       number: '01',

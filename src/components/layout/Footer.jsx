@@ -1,56 +1,53 @@
 import { Link } from 'react-router-dom'
 import mark from '@/assets/logos/adhokshaja-emblem-sm.png'
 import { contact, navLinks, site } from '@/content/site'
-import { Container, Divider, Fill } from '@/components/ui'
+import { Container, Fill } from '@/components/ui'
 
 export function Footer() {
   return (
-    <footer className="bg-midnight-teal text-light">
-      <Container size="wide" className="py-16 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-16">
+    <footer className="border-t border-champagne/20 bg-midnight-teal text-light">
+      <Container size="wide" className="py-14">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <img src={mark} alt="" width="99" height="80" className="h-20 w-auto" />
-            <p className="mt-6 font-heading text-h3 font-medium uppercase tracking-[0.14em]">
-              {site.shortName}
-            </p>
-            <p className="mt-2 font-heading text-xl text-light-2 italic">{site.tagline}</p>
-            <p className="mt-6 max-w-sm text-[0.9375rem] text-light-2">
+            <img src={mark} alt="" width="99" height="80" className="h-16 w-auto" />
+            <p className="mt-5 font-heading text-3xl uppercase tracking-[0.14em]">{site.shortName}</p>
+            <p className="mt-1 font-heading text-xl text-light-2 italic">{site.tagline}</p>
+          </div>
+          <div className="max-w-sm text-sm text-light-2">
+            <p>
               {site.descriptor} of {site.institution}.
             </p>
-          </div>
-
-          <nav aria-label="Footer">
-            <h2 className="font-sans text-eyebrow font-medium uppercase text-champagne">Explore</h2>
-            <ul className="mt-5 space-y-3">
-              {navLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    to={l.to}
-                    className="text-[0.9375rem] text-light-2 transition-colors hover:text-light"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div>
-            <h2 className="font-sans text-eyebrow font-medium uppercase text-champagne">Connect</h2>
-            <ul className="mt-5 space-y-3 text-[0.9375rem] text-light-2">
-              <li>{site.location}</li>
-              <li>
-                <Fill value={contact.email} />
-              </li>
-              <li>
-                <Fill value={contact.instagram} />
-              </li>
-            </ul>
+            <p className="mt-2">{site.location}</p>
+            <p className="mt-2">
+              <a
+                href={contact.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-light underline decoration-champagne underline-offset-4 hover:text-champagne"
+              >
+                {contact.instagramHandle}
+              </a>
+            </p>
+            <p className="mt-2">
+              <Fill value={contact.email} />
+            </p>
           </div>
         </div>
 
-        <Divider className="mt-16 lg:mt-20" />
-        <p className="mt-6 text-sm text-light-2">
+        <ul className="mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-champagne/15 pt-6">
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                className="font-sans text-xs uppercase tracking-[0.16em] text-light-2 transition-colors hover:text-light"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-8 text-sm text-light-2">
           © {new Date().getFullYear()} {site.name}, {site.institution}.
         </p>
       </Container>

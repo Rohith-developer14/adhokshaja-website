@@ -2,12 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 // Self-hosted fonts (latin subset, only the weights in use).
-import '@fontsource/cormorant-garamond/latin-500.css'
-import '@fontsource/cormorant-garamond/latin-600.css'
-import '@fontsource/cormorant-garamond/latin-500-italic.css'
-import '@fontsource/dm-sans/latin-400.css'
-import '@fontsource/dm-sans/latin-500.css'
-import '@fontsource/dm-sans/latin-600.css'
+import '@fontsource/fraunces/latin-500.css'
+import '@fontsource/fraunces/latin-600.css'
+import '@fontsource/fraunces/latin-500-italic.css'
+import '@fontsource/outfit/latin-400.css'
+import '@fontsource/outfit/latin-500.css'
+import '@fontsource/outfit/latin-600.css'
 
 import './styles/index.css'
 import { App } from './app/App'

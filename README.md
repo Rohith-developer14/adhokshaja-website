@@ -10,9 +10,10 @@ npm run build
 
 ## Where things live
 - `src/styles/tokens.css`  colours, type scale, radii, easing (single source of truth)
-- `src/content/`           all copy. Missing facts use `PLACEHOLDER('label')` and render as a dashed `[PLACEHOLDER: ...]` marker. Search the site for "PLACEHOLDER" to find gaps.
+- `src/content/`           copy and the chapter index. Missing facts use `PLACEHOLDER('label')`.
+- `src/components/layout/` spine (`ChapterRail`), top bar, footer. The home page is a procession of rooms, not a stack of cards.
+- `src/features/home/`     one file per room: Portal, Manuscript, Practice, Hour, House, OjasBand, Atlas, Invitation, Threshold
 - `src/components/ui/`     primitives: Button, Section, Container, Heading, Eyebrow, Divider, Reveal
-- `src/features/home/`     home page sections (Hero so far)
 
 ## Replace the hero photograph
 Drop `hero.avif`, `hero.webp` or `hero.jpg` into `src/assets/images/hero/`
