@@ -33,7 +33,7 @@ export const navLinks = [
   { label: 'OJAS 2026', to: '/ojas-2026' },
 ]
 
-export const navCta = { label: 'Join the Club', to: '/#join' }
+export const navCta = { label: 'Join the Club', to: 'https://docs.google.com/forms/d/e/1FAIpQLScAlxPsbEqwLA9ppIIWJt7UIkqQetWXAEVc5TJlugr_NrayXQ/viewform' }
 
 export const contact = {
   email: PLACEHOLDER('club email address'),
